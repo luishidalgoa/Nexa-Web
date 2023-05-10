@@ -1,0 +1,266 @@
+@import "Referencials";
+@import "Fonts";
+@import "animations";
+
+
+#panel_suggestions p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.container-lg {
+  width: 100% !important;
+  min-height: 100%;
+  max-height: max-content;
+}
+
+.click {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+i {
+  cursor: pointer;
+}
+
+.click:active {
+  transform: translate(1px, 2px);
+}
+
+header {
+  position: sticky !important;
+  z-index: 1;
+  top: 0 !important;
+}
+
+/*PANEL USUARIO DESKTOP*/
+#userPanel {
+  gap: 1em;
+  position: relative;
+  div {
+    border: 1px white solid;
+    height: 100%;
+    border-radius: 50px;
+  }
+}
+
+
+
+footer {
+  position: fixed !important;
+  z-index: 2;
+  top: 93vh !important;
+}
+
+.img-zoom {
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;
+}
+
+.img-zoom:hover {
+  filter: blur(0.2px) brightness(0.9) contrast(1.1);
+  transform: scale(1.06); /* Escala la imagen al 120% de su tamaño original */
+}
+
+.img-content { /*Esta clase ajustara a 70px de alto y ancho el contenedor de una imagen. De modo que esta no la pueda modificar el tamaño*/
+  min-width: 70px !important;
+  min-height: 70px !important;
+  max-width: 70px !important;
+  max-height: 70px !important;
+}
+
+/*------------------------------Points------------*/
+#pointsOptions {
+  transform: scale(0.7);
+  overflow: visible;
+  cursor: pointer;
+}
+
+#pointsOptions:hover #Circle1 {
+  animation: perfilOptionsShake 0.5s 0s both;
+}
+
+#pointsOptions:hover #Circle2 {
+  animation: perfilOptionsShake 0.5s 0.2s both;
+}
+
+#pointsOptions:hover #Circle3 {
+  animation: perfilOptionsShake 0.5s 0.4s both;
+}
+
+#publication_opt {
+  z-index: 1;
+  cursor: pointer;
+  margin-left: -80px;
+  max-height: 0px;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.44);
+}
+
+#publication_opt * {
+  transform: scale(0);
+}
+
+#pointsOptions:hover ~ #publication_opt {
+  max-height: 100px !important;
+}
+
+#publication_opt:hover {
+  max-height: 100px !important;
+}
+
+#pointsOptions:hover ~ #publication_opt * {
+  transform: scale(1);
+}
+
+#publication_opt:hover * {
+  transform: scale(1);
+}
+
+.fa-heart:active {
+  color: red !important;
+}
+
+.wrapper {
+  padding: 0;
+  margin: 0;
+  transition: all 2s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+}
+
+.wrapper:hover {
+  background-color: rgba(226, 226, 226, 0.5) !important;
+}
+
+.post {
+  min-height: 180px;
+}
+
+input {
+  border: none !important;
+  outline: none;
+  background: none;
+}
+
+button[id=post] {
+  min-width: fit-content;
+  border-radius: 20px;
+  border: 2px #efefef solid;
+  background-color: #cda9d7;
+  border: 2px #efefef solid !important;
+  outline: none !important;
+  transition: opacity 0.4s ease-out;
+}
+
+textarea {
+  border: 0px;
+  resize: none;
+  background: none !important;
+  outline: none;
+}
+
+/*Menu desplegable perfil*/
+footer div:hover #perfil_menu {
+  opacity: 100% !important;
+  top: -89px !important;
+  transform: scale(1);
+}
+
+#perfil_menu {
+  transition: all 0.3s 0.3s ease-in-out !important;
+  top: 0;
+  transform: scale(0.3);
+  opacity: 0%;
+  border-radius: 10px;
+  z-index: -1;
+  gap: 10px;
+  padding: 1em;
+}
+
+#theme div {
+  transition: all 0.3s 0s ease-in-out;
+  opacity: 0%;
+  padding: 10px;
+  gap: 5px;
+  margin-top: -60px;
+  transform: scale(0.3);
+  border-radius: 10px;
+  z-index: -1 !important;
+}
+
+#theme:hover div {
+  transform: scale(1);
+  opacity: 100%;
+  margin-left: 120px;
+}
+
+#theme div span::before {
+  margin-left: -30px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  content: "";
+  border: 1px black solid;
+  border-radius: 50px;
+}
+
+#theme div span {
+  margin-left: 30px;
+}
+
+#theme_1::before {
+  background: linear-gradient(120deg, rgb(112, 99, 241) 0%, rgb(210, 78, 234) 50%, rgb(249, 111, 139) 100%);
+}
+
+#theme_2::before {
+  background: white !important;
+}
+
+#theme_3::before {
+  background: #121212;
+}
+
+/*PANELES*/
+section div {
+  border-radius: 10px;
+}
+
+#Navigation_panel div {
+  max-height: 53px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Navigation_panel div:nth-child(1) {
+  margin-top: 50% !important;
+}
+
+#Navigation_panel {
+  position: sticky !important;
+  top: 90px;
+  border-radius: 10px;
+  min-height: 80vh;
+  max-height: 80vh;
+  gap: 20px;
+}
+
+#panel_Publications {
+  min-height: 89.9vh;
+  border-radius: 10px;
+}
+
+#panel_suggestions {
+  position: sticky !important;
+  top: 250px !important;
+  border-radius: 10px;
+  max-height: 30em;
+  min-height: 30em;
+}
+
+a {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+/*# sourceMappingURL=Style.css.map */
