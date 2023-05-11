@@ -1,0 +1,24 @@
+.glass-light{
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.5)!important;
+}
+.glass-strong{
+    filter: blur(100%);
+    background-color:rgb(202, 202, 202,0.5);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.bg-clear{
+    filter: blur(100%);
+    background-color:rgb(255, 255, 255)!important;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.bg-e4e4e4{
+    background-color: rgb(228, 228, 228,0.5)!important;
+}
+#anim{
+    min-width: 100%!important;
+    min-height: 100%!important;
+}
+.bg-d8d8d8{
+    background-color: #d8d8d8;
+}

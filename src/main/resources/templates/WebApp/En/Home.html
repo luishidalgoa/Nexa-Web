@@ -8,16 +8,12 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/ee94bf2f3c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/Responsive.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/animation.css">
-    <link rel="stylesheet" href="/css/Background.css">
     <link rel="stylesheet" href="/css/reset.css">
 </head>
 
-<body>
-    <div th:object="${user}" class="m-0 p-0 container-lg row h-100">
+<body class="d-flex justify-content-center Home" id="home">
+    <div th:object="${user}" class="m-0 p-0 container-lg col-lg-7 row h-100">
         <header class="col-12 p-2 d-flex glass-light justify-content-center">
             <div class="glass-strong rw-8 rounded-circle click ml-sm-3">
                 <img src="/images/Logo.png" class="img-zoom img-fluid" alt="">
