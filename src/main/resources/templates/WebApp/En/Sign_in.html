@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign_in</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="bg-d8d8d8" id="Login">
+    <div class="container-lg d-flex flex-column p-4">
+        <header class="d-flex">
+            <div class="rw-10">
+                <img src="/images/Logo.png" class="img-fluid" alt="">
+            </div>
+            <span class="fs-4">Nexa</span>
+        </header>
+        <section class="bg-clear col-12 d-flex flex-column">
+            <div>
+                <span class="fs-4 p-4">Sign in</span>
+            </div>
+            <form method="POST" th:action="@{/Sign_in}" th:object="${User}" class="p-4">
+                <div class="d-flex flex-column gap-3">
+                    <input th:field="*{user_name}" type="text" name="user_name" placeholder="User name">
+                    <input th:field="*{pass}" type="password" name="pass" disabled placeholder="Password">
+                </div>
+                <div class="d-flex gap-3">
+                    <p>You don´t have an account?</p>
+                    <a href="" class="">Sign up</a>
+                </div>
+            </form>
+            <button type="submit" id="post" class="p-2 rw-10 shadow click Niconne ml-auto">Sign in</button>
+        </section>
+    </div>
+</body>
+</html>
