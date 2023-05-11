@@ -2,6 +2,7 @@ package Nexa.luishidalgoa.com.Nexa.Controller;
 
 import Nexa.luishidalgoa.com.Nexa.Model.Utils.Login;
 import Nexa.luishidalgoa.com.Nexa.Model.domain.User.User;
+import Nexa.luishidalgoa.com.Nexa.Model.domain.publications.Publication;
 import Nexa.luishidalgoa.com.Nexa.Services.ServiceUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,16 +19,21 @@ public class ControllerSing_in {
     public ControllerSing_in(ServiceUser serviceUser){
         this.serviceUser=serviceUser;
     }
-    @PostMapping("/Sign_in")
+    @PostMapping("/Sign_in/login")
     public RedirectView sing_in(@ModelAttribute("User")User user){
         User aux= Login.Sing_in(user.getUser_name(),user.getPass(),serviceUser);
         if(aux!=null){
             ControllerHome.setUser(aux);
-            new RedirectView("/Home");
+            return new RedirectView("/home");
         }
-        return new RedirectView("/Sing_in");
+        return new RedirectView("/Sign_in");
     }
+    @GetMapping("/Sign_in")
+    public Object load(Model model){
+        model.addAttribute("User",new User());
 
+        return "WebApp/En/Sign_in";
+    }
     @GetMapping("/index")
     public RedirectView indexRedirect(Model model){
         return new RedirectView("/Sign_in");

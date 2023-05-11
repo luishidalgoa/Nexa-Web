@@ -1,50 +1,50 @@
 @keyframes error {
-    0% {
-      transform: translateX(0);
-    }
-    10%, 90% {
-      transform: translateX(-5px) rotate(-2deg);
-    }
-    20%, 80% {
-      transform: translateX(5px) rotate(2deg);
-    }
-    30%, 50%, 70% {
-      transform: translateX(-5px) rotate(-1deg);
-    }
-    40%, 60% {
-      transform: translateX(5px) rotate(1deg);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
   }
-  @keyframes perfilOptionsShake {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-45%);
-    }
-    100% {
-      transform: unset;
-    }
+  10%, 90% {
+    transform: translateX(-5px) rotate(-2deg);
   }
-
-  .img-zoom {
-    transition: transform 0.3s ease-out, filter 0.3s ease-out;
+  20%, 80% {
+    transform: translateX(5px) rotate(2deg);
   }
-  
-  .img-zoom:hover {
-    filter: blur(0.2px) brightness(0.9) contrast(1.1);
-    transform: scale(1.06); /* Escala la imagen al 120% de su tamaño original */
+  30%, 50%, 70% {
+    transform: translateX(-5px) rotate(-1deg);
   }
-
-  .click {
+  40%, 60% {
+    transform: translateX(5px) rotate(1deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes perfilOptionsShake {
+  0% {
     transform: translateY(0);
-    transition: transform 0.1s ease;
   }
-  .click:active {
-    transform: translate(1px, 2px);
+  50% {
+    transform: translateY(-45%);
   }
-  
-  /*# sourceMappingURL=animation.css.map */  
+  100% {
+    transform: unset;
+  }
+}
+
+.img-zoom {
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;
+}
+
+.img-zoom:hover {
+  filter: blur(0.2px) brightness(0.9) contrast(1.1);
+  transform: scale(1.06); /* Escala la imagen al 120% de su tamaño original */
+}
+
+.click {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+.click:active {
+  transform: translate(1px, 2px);
+}
+
+/*# sourceMappingURL=animation.css.map */

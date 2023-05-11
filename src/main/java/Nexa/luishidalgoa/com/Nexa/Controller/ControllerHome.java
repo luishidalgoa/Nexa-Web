@@ -37,7 +37,6 @@ public class ControllerHome {
     }
     @GetMapping("/home")
     public Object getPublications(Model model){
-        user=servicesUser.searchUser("Luis");
         model.addAttribute("user",user);
         model.addAttribute("publication",new Publication());
         model.addAttribute("newPublication",new Publication());

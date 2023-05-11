@@ -17,21 +17,21 @@
             </div>
             <span class="fs-4">Nexa</span>
         </header>
-        <section class="bg-clear col-12 d-flex flex-column">
+        <section class="bg-clear col-12 d-flex p-2 flex-column">
             <div>
                 <span class="fs-4 p-4">Sign in</span>
             </div>
-            <form method="POST" th:action="@{/Sign_in}" th:object="${User}" class="p-4">
+            <form method="POST" th:action="@{/Sign_in/login}" th:object="${User}" class="p-4">
                 <div class="d-flex flex-column gap-3">
                     <input th:field="*{user_name}" type="text" name="user_name" placeholder="User name">
-                    <input th:field="*{pass}" type="password" name="pass" disabled placeholder="Password">
+                    <input th:field="*{pass}" type="password" name="pass" placeholder="Password">
                 </div>
                 <div class="d-flex gap-3">
                     <p>You don´t have an account?</p>
                     <a href="" class="">Sign up</a>
                 </div>
+                <button type="submit" id="post" class="p-2 rw-10 shadow click Niconne m-auto">Sign in</button>
             </form>
-            <button type="submit" id="post" class="p-2 rw-10 shadow click Niconne ml-auto">Sign in</button>
         </section>
     </div>
 </body>
