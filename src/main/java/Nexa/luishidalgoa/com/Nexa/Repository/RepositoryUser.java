@@ -11,4 +11,6 @@ public interface RepositoryUser extends JpaRepository<User,Long> {
     public User searchUser(String username);
     @Query(value = "select * from nexadatabase.user",nativeQuery = true)
     public List<User> findAll();
+    @Query(value="call nexadatabase.UserSave(?1,?2,?3)",nativeQuery = true)
+    public void save(String username,String pass,String bio);
 }

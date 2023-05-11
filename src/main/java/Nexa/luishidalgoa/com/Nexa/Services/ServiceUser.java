@@ -22,4 +22,24 @@ public class ServiceUser implements InterfaceServiceUser {
     public List<User> findAll() {
         return repositoryUser.findAll();
     }
+
+    @Override
+    public boolean save(String username, String pass, String bio) {
+        repositoryUser.save(username,pass,bio);
+        if(repositoryUser.searchUser(username)==null){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public User sing_in(String username, String pass) {
+        User user= repositoryUser.searchUser(username);
+        if(user!=null && user.getPass().equals(pass)){
+            return user;
+        }else{
+            return null;
+        }
+    }
+
 }

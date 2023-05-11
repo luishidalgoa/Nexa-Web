@@ -1,0 +1,57 @@
+#home{
+    @media (max-width: 300px) {
+        .container-lg {
+          min-width: 400px !important;
+        }
+        footer {
+          min-width: 400px !important;
+        }
+      }
+      @media (min-width: 576px) {
+        header {
+          max-height: 80px !important;
+        }
+        .w-sm-0 {
+          display: none;
+        }
+        .w-sm-100 {
+          display: block !important;
+          width: 100% !important;
+        }
+        #Navigation_panel {
+          min-width: 189px;
+          display: flex !important;
+          max-width: 300px;
+        }
+        footer {
+          display: none !important;
+        }
+      }
+      @media (min-width: 768px) {
+        .w-md-0 {
+          display: none;
+        }
+        .w-md-100 {
+          display: block !important;
+          width: 100% !important;
+        }
+        #Navigation_panel{
+           min-width: 250px;
+        }
+        #userPanel {
+          display: flex !important;
+          display: block;
+          border-radius: 50px;
+          left: -25px;
+        }
+        #panel_suggestions {
+          display: flex !important;
+          min-width: 250px;
+          max-width: 350px;
+        }
+        #panel_Publications {
+          max-width: 500px;
+        }
+      }
+      /*# sourceMappingURL=Responsive.css.map */    
+}

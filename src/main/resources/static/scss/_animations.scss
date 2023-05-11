@@ -29,5 +29,22 @@
       transform: unset;
     }
   }
+
+  .img-zoom {
+    transition: transform 0.3s ease-out, filter 0.3s ease-out;
+  }
+  
+  .img-zoom:hover {
+    filter: blur(0.2px) brightness(0.9) contrast(1.1);
+    transform: scale(1.06); /* Escala la imagen al 120% de su tamaño original */
+  }
+
+  .click {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+  }
+  .click:active {
+    transform: translate(1px, 2px);
+  }
   
   /*# sourceMappingURL=animation.css.map */  

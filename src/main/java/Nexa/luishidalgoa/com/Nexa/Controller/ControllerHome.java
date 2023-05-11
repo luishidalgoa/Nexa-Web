@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -30,7 +27,7 @@ public class ControllerHome {
     @Autowired // AUTOWIRED PASA EL PARAMETRO AUTOMATICA AL CONSTRUCTOR
     private InterfaceServiceShare servicesDifussion;
 
-    private User user;
+    private static User user;
 
     public ControllerHome(ServicePublication servicesPublications, ServiceUser serviceUser, ServiceLikes serviceLikes, ServiceShare serviceDifussion){
         this.servicesPublications=servicesPublications;
@@ -48,14 +45,6 @@ public class ControllerHome {
         model.addAttribute("users",recommendUsers());
         return "WebApp/En/Home";
     }
-    @GetMapping("/index")
-    public RedirectView redirectView_Index(Model model){
-        return new RedirectView("/home");
-    }
-    @GetMapping("/")
-    public RedirectView redirectView(Model model){
-        return new RedirectView("/home");
-    }
 
     @GetMapping("/perfil/{username}") //El usurname debe existir en la base de datos
     public Object getUser(Model model, @PathVariable(name="username") String username){
@@ -63,37 +52,7 @@ public class ControllerHome {
         model.addAttribute("user",servicesUser.searchUser(username));
         return "/WebApp/En/Perfil";
     }
-    @PostMapping("/newPublication")
-    public RedirectView savePublication(@ModelAttribute("newPublication") Publication publication){
-        publication.setUser_name(user.getUser_name());
-        if(findUser(publication.getUser_name())){
-            servicesPublications.Save(publication);
-        }
-        return new RedirectView("/home");
-    }
-    @GetMapping("/deletePublication/{id}")
-    public RedirectView deletePublication(@PathVariable("id")Integer id){
-        servicesPublications.DeletePublication(id);
-        return new RedirectView("/home");
-    }
-    @GetMapping("/liked/{id}")
-    public RedirectView liked(@PathVariable("id")Integer id){
-        if(servicesLike.findLike(id,user.getUser_name())==null){
-            servicesLike.save(id,user.getUser_name());
-        }else{
-            servicesLike.delete(id, user.getUser_name());
-        }
-        return  new RedirectView("/home");
-    }
-    @GetMapping("/share/{id}")
-    public RedirectView shared(@PathVariable("id")Integer id){
-        if(servicesDifussion.findShare(id,user.getUser_name())==null){
-            servicesDifussion.save(id,user.getUser_name());
-        }else{
-            servicesDifussion.delete(id, user.getUser_name());
-        }
-        return  new RedirectView("/home");
-    }
+
     public Set<User> recommendUsers(){
         Set<User>users = new HashSet<>();
         List<User>findAll=servicesUser.findAll();
@@ -116,15 +75,12 @@ public class ControllerHome {
         return publicationDTOS;
     }
 
-    /**
-     * Comprueba si el usuario que realiza la publicacion existe
-     * @param username
-     * @return
-     */
-    public boolean findUser(String username){
-        if(servicesUser.searchUser(username)!=null){
-            return true;
-        }
-        return false;
+    public static User getUser() {
+        return user;
     }
+
+    public static void setUser(User user) {
+        ControllerHome.user = user;
+    }
+
 }
