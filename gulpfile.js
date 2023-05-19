@@ -10,7 +10,7 @@ function compilarSCSS() {
 }
 
 function arrancarProyecto() {
-    return exec('./mvnw spring-boot:run', (err, stdout, stderr) => {
+    return exec('mvnw spring-boot:run', (err, stdout, stderr) => {
         if (err) {
             console.error(err);
             return;
