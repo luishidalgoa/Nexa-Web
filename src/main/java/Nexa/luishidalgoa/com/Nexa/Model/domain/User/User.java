@@ -6,6 +6,9 @@ import lombok.Data;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 @Table
 @Entity
 @Data

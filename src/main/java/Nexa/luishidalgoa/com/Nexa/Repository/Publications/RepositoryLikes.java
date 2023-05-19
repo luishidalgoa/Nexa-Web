@@ -21,7 +21,7 @@ public interface RepositoryLikes extends JpaRepository<likes,Long> {
      */
     @Transactional
     @Modifying
-    @Query(value = "INSERT INTO nexadatabase.likes(id_publication, user_name) VALUES (?1,?2)",nativeQuery = true)
+    @Query(value = "INSERT INTO nexadatabase.likes(id_publication, user_name,date_shared) VALUES (?1,?2,CURRENT_TIMESTAMP)",nativeQuery = true)
     public void save(Integer id, String username);
     @Transactional
     @Modifying

@@ -5,6 +5,8 @@ import lombok.Data;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.sql.Timestamp;
+
 @Data
 @Entity
 @Table(name = "likes")
@@ -26,5 +28,8 @@ public class likes {
     @JdbcTypeCode(SqlTypes.INTEGER)
     private Integer id;
 
+    @Column(name = "date_like")
+    @JdbcTypeCode(SqlTypes.TIMESTAMP)
+    private Timestamp date_like;
 
 }

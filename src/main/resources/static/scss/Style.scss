@@ -41,15 +41,15 @@ $text-color: rgb(31, 31, 31);
       }
     }
     button{
-          min-width: fit-content;
-          border-radius: 50px;
-          border: 2px #efefef solid;
-          color: white;
-          background-color: #ddb0ea;
-          border: 2px #efefef solid !important;
-          outline: none !important;
-          transition: opacity 0.4s ease-out;
-          margin-bottom: 20px;
+      min-width: fit-content;
+      border-radius: 50px;
+      border: 2px #efefef solid;
+      color: white;
+      background-color: #ddb0ea;
+      border: 2px #efefef solid !important;
+      outline: none !important;
+      transition: opacity 0.4s ease-out;
+      margin-bottom: 20px;
     }
   }
 }
