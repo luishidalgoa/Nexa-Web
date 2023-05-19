@@ -5,6 +5,8 @@ import lombok.Data;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.sql.Timestamp;
+
 @Data
 @Entity
 @Table
@@ -25,5 +27,9 @@ public class Share {
     @Column(name = "id", nullable = false)
     @JdbcTypeCode(SqlTypes.INTEGER)
     private Integer id;
+
+    @Column(name = "date_shared")
+    @JdbcTypeCode(SqlTypes.TIMESTAMP)
+    private Timestamp date_shared;
 
 }

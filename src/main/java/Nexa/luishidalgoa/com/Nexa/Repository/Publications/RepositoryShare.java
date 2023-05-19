@@ -14,10 +14,10 @@ public interface RepositoryShare extends JpaRepository<Share,Long> {
     public List<Share> findById(int id);
     @Transactional
     @Modifying
-    @Query(value = "INSERT INTO nexadatabase.share(id_publication, user_name) VALUES (?1,?2)",nativeQuery = true)
+    @Query(value = "INSERT INTO nexadatabase.share(id_publication, user_name,date_shared) VALUES (?1,?2,CURRENT_TIMESTAMP)",nativeQuery = true)
     public void save(Integer id, String username);
 
-    @Query(value = "select d.* from nexadatabase.share d JOIN nexadatabase.publication p on d.id_publication=p.id where d.id_publication=?1 and d.user_name=?2", nativeQuery = true)
+    @Query(value = "select d.* from nexadatabase.share d JOIN nexadatabase.publication p on d.id_publication=p.id where d.id_publication=?1 and d.user_name=?2 order by date_shared", nativeQuery = true)
     public Share findShare(int id, String username);
     @Transactional
     @Modifying
