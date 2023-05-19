@@ -1,0 +1,7 @@
+En el archivo Script esta toda la base de datos . 
+
+En ese archivos estan todos los creates, todas las referencias y todos los inserts. 
+
+
+PORFAVOR EN CASO DE FALTAR CUALQUIER TIPO DE COSA EN LOS ANTERIORES ARCHIVOS.
+REVISAR EL ARCHIVO "SCRIPT.SQL"
