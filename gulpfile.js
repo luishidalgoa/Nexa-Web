@@ -9,7 +9,7 @@ function compilarSCSS() {
         .pipe(gulp.dest('./src/main/resources/static/css/')); // Reemplaza 'ruta/de/destino' por la ruta donde deseas guardar el archivo CSS compilado
 }
 
-function arrancarProyecto() {
+function start() {
     return exec('mvnw spring-boot:run', (err, stdout, stderr) => {
         if (err) {
             console.error(err);
@@ -27,6 +27,6 @@ gulp.task('sassdoc', function() {
         }));
 });
 
-gulp.task('load', arrancarProyecto);
+gulp.task('load', start);
 
 gulp.task('scss', compilarSCSS);
