@@ -239,9 +239,8 @@
     width: 100% !important;
   }
   #home #Navigation_panel {
-    min-width: 189px;
+    min-width: fit-content;
     display: flex !important;
-    max-width: 300px;
   }
   #home footer {
     display: none !important;
@@ -255,18 +254,13 @@
     display: block !important;
     width: 100% !important;
   }
-  #home #Navigation_panel {
-    min-width: 250px;
-  }
   #home #userPanel {
     display: flex !important;
-    display: block;
     border-radius: 50px;
     left: -25px;
   }
   #home #panel_suggestions {
     display: flex !important;
-    min-width: 250px;
     max-width: 350px;
   }
   #home #panel_Publications {
@@ -525,7 +519,6 @@
   color: rgb(31, 31, 31);
 }
 #Login .container-lg section {
-  min-width: 200px;
   max-width: 500px;
   border-radius: 10px;
 }

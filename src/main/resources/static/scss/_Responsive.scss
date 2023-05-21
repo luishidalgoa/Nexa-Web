@@ -19,9 +19,8 @@
       width: 100% !important;
     }
     #Navigation_panel {
-      min-width: 189px;
+      min-width: fit-content;
       display: flex !important;
-      max-width: 300px;
     }
     footer {
       display: none !important;
@@ -35,18 +34,13 @@
       display: block !important;
       width: 100% !important;
     }
-    #Navigation_panel{
-      min-width: 250px;
-    }
     #userPanel {
       display: flex !important;
-      display: block;
       border-radius: 50px;
       left: -25px;
     }
     #panel_suggestions {
       display: flex !important;
-      min-width: 250px;
       max-width: 350px;
     }
     #panel_Publications {
